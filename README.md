@@ -5,7 +5,11 @@
 
 Take a look at [official documentation](https://gohugo.io/overview/introduction/).
 
-### Hugo
+## Discussion / Help
+
+[![Join the chat](https://img.shields.io/gitter/room/dockette/dockette.svg?style=flat-square)](https://gitter.im/dockette/dockette?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+## Usage
 
 Show help:
 
