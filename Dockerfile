@@ -1,6 +1,4 @@
-FROM dockette/edge
-
-MAINTAINER Milan Sulc <sulcmil@gmail.com>
+FROM dockette/alpine:3.11
 
 RUN apk update && \
     apk upgrade && \
