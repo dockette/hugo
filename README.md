@@ -28,3 +28,7 @@ Build site:
 ```
 docker run -it --rm -v $(pwd):/srv dockette/hugo
 ```
+
+## Maintenance
+
+See [how to contribute](https://github.com/dockette/.github/blob/master/CONTRIBUTING.md) to this package.
