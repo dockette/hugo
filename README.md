@@ -20,7 +20,7 @@ docker run -it --rm dockette/hugo help new
 Start embedded server:
 
 ```
-docker run -it --rm -v $(pwd):/srv dockette/hugo server -D -v
+docker run -it --rm -p 1313:1313 -v $(pwd):/srv dockette/hugo server --bind 0.0.0.0 --baseURL http://localhost:1313 -D -v
 ```
 
 Build site:
