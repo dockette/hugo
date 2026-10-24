@@ -26,6 +26,7 @@ Dockette Hugo builds `dockette/hugo`, a Docker image for running the Hugo static
 ## Guidelines
 
 - Keep `Dockerfile`, `Makefile`, README usage, and `.github/workflows/docker.yml` aligned.
+- `VERSION` is the release date; `make release` bumps it. CI pushes `latest` also as `<VERSION>` and creates the GitHub release.
 - Prefer `DOCKER_*` names for Docker-related Makefile variables.
 - Place `.PHONY: <target>` directly above each Makefile target.
 - Keep README badges and maintenance sections consistent with other Dockette image repos.

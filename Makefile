@@ -2,6 +2,7 @@ DOCKER_IMAGE=dockette/hugo
 DOCKER_TAG?=latest
 DOCKER_PLATFORMS?=linux/amd64,linux/arm64
 SITE_DIR?=${PWD}
+VERSION:=$(shell cat VERSION)
 
 .PHONY: build
 build:
@@ -14,3 +15,13 @@ test:
 .PHONY: run
 run:
 	docker run --rm -it -p 1313:1313 -v "${SITE_DIR}:/srv" ${DOCKER_IMAGE}:${DOCKER_TAG} server --bind 0.0.0.0 --baseURL http://localhost:1313 -D
+
+.PHONY: version
+version:
+	@echo ${VERSION}
+
+.PHONY: release
+release:
+	@date -u +%Y.%m.%d > VERSION
+	@echo "VERSION: ${VERSION} -> $$(cat VERSION)"
+	@echo "next: git commit -am \"Release: $$(cat VERSION)\" && git push"
