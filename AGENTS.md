@@ -9,7 +9,7 @@ Dockette Hugo builds `dockette/hugo`, a Docker image for running the Hugo static
 - Default image: `dockette/hugo:latest`.
 - Build context: repository root `.` with `Dockerfile`.
 - Base image: `dockette/alpine:3.11`.
-- GitHub Actions builds `linux/amd64` for tests, then publishes `linux/amd64,linux/arm64` through the shared Dockette Docker workflow on `master` and the weekly schedule.
+- GitHub Actions builds `linux/amd64` for tests, then publishes `linux/amd64,linux/arm64` with one inline Build job (all tags at once) on `master` and the weekly schedule.
 
 ## Commands
 
@@ -26,6 +26,7 @@ Dockette Hugo builds `dockette/hugo`, a Docker image for running the Hugo static
 ## Guidelines
 
 - Keep `Dockerfile`, `Makefile`, README usage, and `.github/workflows/docker.yml` aligned.
+- `VERSION` is the release date; `make release` bumps it. CI pushes `latest` also as `<VERSION>` and creates the GitHub release.
 - Prefer `DOCKER_*` names for Docker-related Makefile variables.
 - Place `.PHONY: <target>` directly above each Makefile target.
 - Keep README badges and maintenance sections consistent with other Dockette image repos.
